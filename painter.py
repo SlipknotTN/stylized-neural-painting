@@ -1,8 +1,8 @@
+import json
 import os
 import cv2
 import random
 
-import utils
 import loss
 from networks import *
 import morphology
@@ -57,6 +57,10 @@ class PainterBase():
 
         if os.path.exists(self.output_dir) is False:
             os.mkdir(self.output_dir)
+
+        with open(os.path.join(self.output_dir, "args.json"), "w") as out_args_file:
+            json.dump(vars(args), out_args_file, indent=4)
+
 
     def _load_checkpoint(self):
 
