@@ -1,0 +1,9 @@
+# Work directories
+checkpoints
+output
+
+# PyCharm
+.idea
+
+# Py Cache
+*.pyc
